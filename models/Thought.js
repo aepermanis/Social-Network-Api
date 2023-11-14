@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const { ObjectId } = require('mongoose').Types
 
 // Schema to create a course model
 const thoughtSchema = new Schema(
@@ -18,8 +19,8 @@ const thoughtSchema = new Schema(
     },
     reactions: [{
       reactionId: {
-        type: Schema.Types.ObjectId,
-        default: new Schema.Types.ObjectId,
+        type: ObjectId,
+        default: new ObjectId,
       },
       reactionBody: {
         type: String,
@@ -62,7 +63,7 @@ const thoughtSchema = new Schema(
       default: Date.now()
     }
   }
-)*/
+) */
 
 thoughtSchema.virtual('firstCount').get(function () {
   return this.reactions.length;

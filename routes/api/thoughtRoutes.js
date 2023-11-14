@@ -26,7 +26,7 @@ router
 
 
 router
-  .route('/:studentId/reactions/:assignmentId')
+  .route('/:thoughtId/reactions/:reactionId')
   .delete(removeReaction);
 
 module.exports = router;
